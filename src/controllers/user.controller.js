@@ -84,7 +84,6 @@ const userRegister = asyncHandler( async (req, res) => {
         fullName : fullName,
         email,
         password,
-        
     })
 console.log(user)
     // Remove password and Resfresh token field from response
@@ -454,6 +453,7 @@ const verifyUserLoggedIn = asyncHandler( async (req, res) => {
         )
     )
 })
+
 
 export { 
     userRegister, 

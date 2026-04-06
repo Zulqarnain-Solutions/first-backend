@@ -19,8 +19,17 @@ app.use(cookieParser());
 import { router as UserRouter } from './routes/user.route.js'
 import { errorHandler } from './middlewares/errorHandler.js';
 
-// Routes 
+// USer Routes 
 app.use("/api/v1/users", UserRouter )
+
+// Course Route
+app.use("/api/v1/course", UserRouter)
+
+// Enrollement Route endPoint
+app.use("/api/v1/enroll" , UserRouter )
+
+// Enrollement Route endPoint
+app.use("/api/v1/contact" , UserRouter )
 
 app.use(errorHandler);
 
