@@ -145,7 +145,8 @@ const userLogin = asyncHandler( async (req, res) => {
 
     const options = {
         httpOnly : true,
-        secure: true
+        secure: true,
+        sameSite: "None"
     }
 
     // Send cookies and Resturn response
@@ -180,7 +181,8 @@ const logout = asyncHandler( async (req, res) => {
 
      const options = {
         httpOnly : true,
-        secure: true
+        secure: true,
+        sameSite: "None"
     }
 
     return res.status(200)
@@ -226,7 +228,8 @@ const regenerateRefreshToken = asyncHandler( async (req, res) => {
  
      const options = {
          httpOnly : true,
-         secure: true
+         secure: true,
+         sameSite: "None"
      }
  
      return res.status(200)
