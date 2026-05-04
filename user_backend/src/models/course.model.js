@@ -21,14 +21,8 @@ const courseSchema = new mongoose.Schema({
     },
     thumbnail: {
         type: String
-    },
-    instructor:{
-        type: String
     }
-},
-{
-    timestamps: true
-}
-)
+
+})
 
 export const Course = mongoose.model("Course" , courseSchema);

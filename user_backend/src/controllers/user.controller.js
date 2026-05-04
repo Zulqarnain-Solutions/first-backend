@@ -110,7 +110,7 @@ console.log(user)
 // User Authentication or login logic 
 const userLogin = asyncHandler( async (req, res) => {
 
-    // console.log(req.body);
+    console.log(req.body);
     // Get data from user - req.body
     const { userName, email, password } = req.body;
 
@@ -439,7 +439,7 @@ const updateCoverImage = asyncHandler( async (req, res) =>{
 
 // we will verify user data that user logged in or not 
 const verifyUserLoggedIn = asyncHandler( async (req, res) => {
-    // console.log("HELOOO!!");
+    console.log("HELOOO!!");
     // console.log( req.user);
     const user = await User.findByIdAndUpdate( 
         req.user._id

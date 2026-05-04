@@ -2,7 +2,7 @@ import { Router } from "express";
 import { userRegister, userLogin, logout, regenerateRefreshToken, verifyUserLoggedIn, updateAccountDetails  } from "../controllers/user.controller.js";
 import { upload } from "../middlewares/multer.middleware.js";
 import verifyJWT from "../middlewares/Auth.middleware.js";
-import { addCourse, deleteCourse, getCourses } from "../controllers/course.controller.js";
+import { addCourse, getCourses } from "../controllers/course.controller.js";
 import { enroll } from "../controllers/enroll.controller.js";
 import { addmessage } from "../controllers/message.controller.js";
 
@@ -24,22 +24,14 @@ router.route("/verifyUserLoggedIn").get(verifyJWT, verifyUserLoggedIn)
 router.route("/logout").get( verifyJWT, logout )
 router.route("/refresh-tokens").post( regenerateRefreshToken )
 
-
-
 // Course Route
-// upload.single('thumbnail')
 router.route("/addCourse").post( upload.single('thumbnail'), addCourse)
 router.route("/getCourses").get(getCourses);
-router.route("/deleteCourse").post(deleteCourse);
-
-
 
 // Entrollment 
 router.route("/Enrollment").post(verifyJWT, enroll);
-      
 
-
-// Contact
+// Contact 
 router.route("/addmessage").post(addmessage);
 
 export { router }
